@@ -1,11 +1,14 @@
+import {driversPoints} from './scoreboard.js';
+import {drivers, Driver} from './drivers.js';
 const teamsAmount = 10;
 
 class Team{
-    constructor(teamName, teamPrincipal, firstDriver, secondDriver){
+    constructor(teamName, teamPrincipal, firstDriver, secondDriver, teamPoints){
         this.teamName = teamName;
         this.teamPrincipal = teamPrincipal;
         this.firstDriver = firstDriver;
         this.secondDriver = secondDriver;
+        this.teamPoints = teamPoints;
     };
 }
 let teams = {
