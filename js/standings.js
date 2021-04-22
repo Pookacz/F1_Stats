@@ -8,26 +8,26 @@ STANDINGS FOR DRIVERS
 -=-=-=-=-=-=-=-=-=-=-
 */
 let driversMap = new Map();
-driversMap.set("hamilton", drivers.hamilton.getPoints());
-driversMap.set("bottas", drivers.bottas.getPoints());
-driversMap.set("verstappen", drivers.verstappen.getPoints());
-driversMap.set("perez", drivers.perez.getPoints());
-driversMap.set("norris", drivers.norris.getPoints());
-driversMap.set("ricciardo", drivers.ricciardo.getPoints());
-driversMap.set("leclerc", drivers.leclerc.getPoints());
-driversMap.set("sainz", drivers.sainz.getPoints());
-driversMap.set("gasly", drivers.gasly.getPoints());
-driversMap.set("tsunoda", drivers.tsunoda.getPoints());
-driversMap.set("stroll", drivers.stroll.getPoints());
-driversMap.set("vettel", drivers.vettel.getPoints());
-driversMap.set("ocon", drivers.ocon.getPoints());
-driversMap.set("alonso", drivers.alonso.getPoints());
-driversMap.set("raikkonen", drivers.raikkonen.getPoints());
-driversMap.set("giovinazzi", drivers.giovinazzi.getPoints());
-driversMap.set("russell", drivers.russell.getPoints());
-driversMap.set("latifi", drivers.latifi.getPoints());
-driversMap.set("schumacher", drivers.schumacher.getPoints());
-driversMap.set("mazepin", drivers.mazepin.getPoints());
+driversMap.set("Hamilton", drivers.hamilton.getPoints());
+driversMap.set("Bottas", drivers.bottas.getPoints());
+driversMap.set("Verstappen", drivers.verstappen.getPoints());
+driversMap.set("Perez", drivers.perez.getPoints());
+driversMap.set("Norris", drivers.norris.getPoints());
+driversMap.set("Ricciardo", drivers.ricciardo.getPoints());
+driversMap.set("Leclerc", drivers.leclerc.getPoints());
+driversMap.set("Sainz", drivers.sainz.getPoints());
+driversMap.set("Gasly", drivers.gasly.getPoints());
+driversMap.set("Tsunoda", drivers.tsunoda.getPoints());
+driversMap.set("Stroll", drivers.stroll.getPoints());
+driversMap.set("Vettel", drivers.vettel.getPoints());
+driversMap.set("Ocon", drivers.ocon.getPoints());
+driversMap.set("Alonso", drivers.alonso.getPoints());
+driversMap.set("Raikkonen", drivers.raikkonen.getPoints());
+driversMap.set("Giovinazzi", drivers.giovinazzi.getPoints());
+driversMap.set("Russell", drivers.russell.getPoints());
+driversMap.set("Latifi", drivers.latifi.getPoints());
+driversMap.set("Schumacher", drivers.schumacher.getPoints());
+driversMap.set("Mazepin", drivers.mazepin.getPoints());
 
 let pointsArr = [];
 //Change Map to Arr for sort method
@@ -42,8 +42,35 @@ function sorty(a, b) {
 pointsArr.sort(sorty);
 //Show drivers standings
 function showDriversStandings() {
+  
   for (let i = 0; i < pointsArr.length; i++) {
     console.log(i + 1 + ". " + pointsArr[i][0] + " " + pointsArr[i][1]);
+    
+    const driversProfile = document.createElement("div"),
+          driversPhoto = document.createElement("img"),
+          driversPosition = document.createElement("span"),
+          driversName = document.createElement("span"),
+          driversPoints = document.createElement("span"),
+          container = document.querySelector("#container");
+    
+          driversProfile.classList.add("driversProfile");
+          driversPhoto.classList.add("driversPhoto");
+          driversPosition.classList.add("driversPosition");
+          driversName.classList.add("driversName");
+          driversPoints.classList.add("driversPoints");
+    
+    // driversPhoto.innerHTML = " <img src='drivers_photos/" + pointsArr[i][0] +".png' class='driversPhotos'>";
+    driversPhoto.setAttribute("src", "drivers_photos/" + pointsArr[i][0] + ".png");
+    driversPosition.innerText = i + 1 + ".";
+    driversName.innerText =  pointsArr[i][0];
+    driversPoints.innerText = pointsArr[i][1];
+
+    container.appendChild(driversProfile);
+    driversProfile.appendChild(driversPhoto);
+    driversProfile.appendChild(driversPosition);
+    driversProfile.appendChild(driversName);
+    driversProfile.appendChild(driversPoints);
+    
   }
 }
 showDriversStandings();
