@@ -1,7 +1,6 @@
-
-import {drivers} from "./drivers.js";
-import {teams} from "./teams.js";
-import {races} from "./races.js";
+import { drivers } from "./drivers.js";
+import { teams } from "./teams.js";
+import { races } from "./races.js";
 
 /*
 -=-=-=-=-=-=-=-=-=-=-
@@ -32,20 +31,20 @@ driversMap.set("mazepin", drivers.mazepin.getPoints());
 
 let pointsArr = [];
 //Change Map to Arr for sort method
-for(let value of driversMap){
-    pointsArr.push(value);    
+for (let value of driversMap) {
+  pointsArr.push(value);
 }
 //sort way
 function sorty(a, b) {
-    return b[1] - a[1]
- }
+  return b[1] - a[1];
+}
 //sort Arr
 pointsArr.sort(sorty);
 //Show drivers standings
-function showDriversStandings(){
-    for(let i = 0; i < pointsArr.length; i++){
-        console.log(i+1 + ". " + pointsArr[i][0] + " " + pointsArr[i][1])
-    }
+function showDriversStandings() {
+  for (let i = 0; i < pointsArr.length; i++) {
+    console.log(i + 1 + ". " + pointsArr[i][0] + " " + pointsArr[i][1]);
+  }
 }
 showDriversStandings();
 
@@ -68,17 +67,19 @@ teamsMap.set("haas", teams.haas.getTeamPoints());
 
 let teamsPointsArr = [];
 //Change Map to Arr for sort method
-for(let value of teamsMap){
-    teamsPointsArr.push(value);    
+for (let value of teamsMap) {
+  teamsPointsArr.push(value);
 }
 
 //sort Arr
 teamsPointsArr.sort(sorty);
 //Show Teams Standings
-function showTeamsStandings(){
-    for(let i = 0; i < teamsPointsArr.length; i++){
-        console.log(i+1 + ". " + teamsPointsArr[i][0] + " " + teamsPointsArr[i][1])
-    }
+function showTeamsStandings() {
+  for (let i = 0; i < teamsPointsArr.length; i++) {
+    console.log(
+      i + 1 + ". " + teamsPointsArr[i][0] + " " + teamsPointsArr[i][1]
+    );
+  }
 }
 showTeamsStandings();
-export {driversMap}; 
+export { driversMap };
