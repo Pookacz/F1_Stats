@@ -51,5 +51,5 @@ let races = {
     "imola": new Race("Imola", ver, ham, nor, lec, sai, ric, gas, str, oco, alo, per, tsu, rai, gio, vet, msc, maz, bot, rus, lat, ham).addPoints()
 }
 
-// console.log(races.bahrain.getPositions())
+
 export {races};

@@ -47,28 +47,7 @@ let drivers = {
     "schumacher": new Driver("Mick", "Schumacher", "msc", "Haas", driversPoints.mscPoints),
     "mazepin": new Driver("Nikita", "Mazepin", "maz", "Haas", driversPoints.mazPoints)
 }
-let {
-    hamilton: ham, 
-    bottas: bot, 
-    verstappen: ver, 
-    perez: per, 
-    norris: nor, 
-    ricciardo: ric, 
-    leclerc: lec, 
-    sainz: sai, 
-    gasly: gas, 
-    tsunoda: tsu, 
-    stroll: str, 
-    vettel: vet,
-    ocon: oco,
-    alonso: alo,
-    raikkonen: rai,
-    giovinazzi: gio,
-    russell: rus,
-    latifi: lat,
-    schumacher: msc,
-    mazepin: maz
-    } = drivers || {};
+
 
 
 export {drivers, Driver};

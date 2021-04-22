@@ -23,16 +23,5 @@ let driversPoints = {
     mscPoints : [],
     mazPoints : []
 }
-// Teams arr Points
-let mercedesPoints = [],
-    redbullPoints = [],
-    mclarenPoints = [],
-    ferrariPoints = [],
-    alphatauriPoints = [],
-    astonmartinPoints = [],
-    alpinePoints = [],
-    alfaromeoPoints = [],
-    williamsPoints = [],
-    haasPoints = [];
 
 export {positionPoints, driversPoints};
