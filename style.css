@@ -12,18 +12,19 @@ body{
     height: 125px;
     background-color: #fff;
     display: flex;
-    border-radius: 20px;
-    border: solid 3px #00D2BE;
+    border-radius: 10px;
+    border-bottom: 1px solid lightgray;
     margin: 20px auto 20px auto
 }
 
 .driversPhotos{
-    padding-left: 20px;
+    padding-left: 30px;
     height: 125px;
 }
 .driversPosition{
     padding-left: 30px;
     font-size: 60px;
+    font-weight: bold;
     height: 90px;
     margin: 17.5px 0 17.5px 0 ;
 }
@@ -39,6 +40,23 @@ body{
     margin: 17.5px 0 17.5px 0 ;
     margin-left: auto;
     padding-right: 30px;
-    
-    
+}
+#menuBox{
+    background-color: #FF1801;
+    height: 50px;
+    display: flex;
+}
+.f1Logo{
+    height: 30px;
+    padding: 10px 20px;
+}
+.menuOption{
+    color: #fff;
+    font-size: 22.5px;
+    padding: 7px 20px;
+    cursor: pointer;
+}
+.menuOption:hover{
+    background-color: #000;
+    color: #fff
 }

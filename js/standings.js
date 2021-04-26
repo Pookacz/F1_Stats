@@ -44,7 +44,6 @@ pointsArr.sort(sorty);
 function showDriversStandings() {
   
   for (let i = 0; i < pointsArr.length; i++) {
-    console.log(i + 1 + ". " + pointsArr[i][0] + " " + pointsArr[i][1]);
     
     const driversProfile = document.createElement("div"),
           driversPhoto = document.createElement("img"),
@@ -54,7 +53,7 @@ function showDriversStandings() {
           container = document.querySelector("#container");
     
           driversProfile.classList.add("driversProfile");
-          driversPhoto.classList.add("driversPhoto");
+          driversPhoto.classList.add("driversPhotos");
           driversPosition.classList.add("driversPosition");
           driversName.classList.add("driversName");
           driversPoints.classList.add("driversPoints");
@@ -73,7 +72,6 @@ function showDriversStandings() {
     
   }
 }
-showDriversStandings();
 
 /*
 -=-=-=-=-=-=-=-=-=-
@@ -81,16 +79,16 @@ STANDINGS FOR TEAMS
 -=-=-=-=-=-=-=-=-=-
 */
 let teamsMap = new Map();
-teamsMap.set("mercedes", teams.mercedes.getTeamPoints());
-teamsMap.set("redbull", teams.redbull.getTeamPoints());
-teamsMap.set("mclaren", teams.mclaren.getTeamPoints());
-teamsMap.set("ferrari", teams.ferrari.getTeamPoints());
-teamsMap.set("alphatauri", teams.alphatauri.getTeamPoints());
-teamsMap.set("astonmartin", teams.astonmartin.getTeamPoints());
-teamsMap.set("alpine", teams.alpine.getTeamPoints());
-teamsMap.set("alfaromeo", teams.alfaromeo.getTeamPoints());
-teamsMap.set("williams", teams.williams.getTeamPoints());
-teamsMap.set("haas", teams.haas.getTeamPoints());
+teamsMap.set("Mercedes", teams.mercedes.getTeamPoints());
+teamsMap.set("Redbull", teams.redbull.getTeamPoints());
+teamsMap.set("Mclaren", teams.mclaren.getTeamPoints());
+teamsMap.set("Ferrari", teams.ferrari.getTeamPoints());
+teamsMap.set("Alpha Tauri", teams.alphatauri.getTeamPoints());
+teamsMap.set("Aston Martin", teams.astonmartin.getTeamPoints());
+teamsMap.set("Alpine", teams.alpine.getTeamPoints());
+teamsMap.set("Alfa Romeo", teams.alfaromeo.getTeamPoints());
+teamsMap.set("Williams", teams.williams.getTeamPoints());
+teamsMap.set("Haas", teams.haas.getTeamPoints());
 
 let teamsPointsArr = [];
 //Change Map to Arr for sort method
@@ -103,10 +101,32 @@ teamsPointsArr.sort(sorty);
 //Show Teams Standings
 function showTeamsStandings() {
   for (let i = 0; i < teamsPointsArr.length; i++) {
-    console.log(
-      i + 1 + ". " + teamsPointsArr[i][0] + " " + teamsPointsArr[i][1]
-    );
+
+    const teamsProfile = document.createElement("div"),
+          teamsPhoto = document.createElement("img"),
+          teamsPosition = document.createElement("span"),
+          teamsName = document.createElement("span"),
+          teamsPoints = document.createElement("span"),
+          container = document.querySelector("#container");
+    
+          teamsProfile.classList.add("driversProfile");
+          teamsPhoto.classList.add("driversPhotos");
+          teamsPosition.classList.add("driversPosition");
+          teamsName.classList.add("driversName");
+          teamsPoints.classList.add("driversPoints");
+    
+          teamsPhoto.setAttribute("src", "teams_photos/" + teamsPointsArr[i][0] + ".png");
+          teamsPosition.innerText = i + 1 + ".";
+          teamsName.innerText =  teamsPointsArr[i][0];
+          teamsPoints.innerText = teamsPointsArr[i][1];
+      
+          container.appendChild(teamsProfile);
+          teamsProfile.appendChild(teamsPhoto);
+          teamsProfile.appendChild(teamsPosition);
+          teamsProfile.appendChild(teamsName);
+          teamsProfile.appendChild(teamsPoints);
+    
   }
 }
-showTeamsStandings();
-export { driversMap };
+
+export { driversMap, showTeamsStandings, showDriversStandings};
