@@ -42,26 +42,32 @@ function sorty(a, b) {
 pointsArr.sort(sorty);
 //Show drivers standings
 function showDriversStandings() {
-  
+  //Delete previous content
+  const container = document.querySelector("#container");
+  if (container.hasChildNodes() == true) {
+    container.innerHTML = "";
+  }
+
   for (let i = 0; i < pointsArr.length; i++) {
-    
     const driversProfile = document.createElement("div"),
-          driversPhoto = document.createElement("img"),
-          driversPosition = document.createElement("span"),
-          driversName = document.createElement("span"),
-          driversPoints = document.createElement("span"),
-          container = document.querySelector("#container");
-    
-          driversProfile.classList.add("driversProfile");
-          driversPhoto.classList.add("driversPhotos");
-          driversPosition.classList.add("driversPosition");
-          driversName.classList.add("driversName");
-          driversPoints.classList.add("driversPoints");
-    
+      driversPhoto = document.createElement("img"),
+      driversPosition = document.createElement("span"),
+      driversName = document.createElement("span"),
+      driversPoints = document.createElement("span");
+
+    driversProfile.classList.add("driversProfile");
+    driversPhoto.classList.add("driversPhotos");
+    driversPosition.classList.add("driversPosition");
+    driversName.classList.add("driversName");
+    driversPoints.classList.add("driversPoints");
+
     // driversPhoto.innerHTML = " <img src='drivers_photos/" + pointsArr[i][0] +".png' class='driversPhotos'>";
-    driversPhoto.setAttribute("src", "drivers_photos/" + pointsArr[i][0] + ".png");
+    driversPhoto.setAttribute(
+      "src",
+      "drivers_photos/" + pointsArr[i][0] + ".png"
+    );
     driversPosition.innerText = i + 1 + ".";
-    driversName.innerText =  pointsArr[i][0];
+    driversName.innerText = pointsArr[i][0];
     driversPoints.innerText = pointsArr[i][1];
 
     container.appendChild(driversProfile);
@@ -69,7 +75,6 @@ function showDriversStandings() {
     driversProfile.appendChild(driversPosition);
     driversProfile.appendChild(driversName);
     driversProfile.appendChild(driversPoints);
-    
   }
 }
 
@@ -100,33 +105,39 @@ for (let value of teamsMap) {
 teamsPointsArr.sort(sorty);
 //Show Teams Standings
 function showTeamsStandings() {
-  for (let i = 0; i < teamsPointsArr.length; i++) {
+  //Delete previous content
+  const container = document.querySelector("#container");
+  if (container.hasChildNodes() == true) {
+    container.innerHTML = "";
+  }
 
+  for (let i = 0; i < teamsPointsArr.length; i++) {
     const teamsProfile = document.createElement("div"),
-          teamsPhoto = document.createElement("img"),
-          teamsPosition = document.createElement("span"),
-          teamsName = document.createElement("span"),
-          teamsPoints = document.createElement("span"),
-          container = document.querySelector("#container");
-    
-          teamsProfile.classList.add("driversProfile");
-          teamsPhoto.classList.add("driversPhotos");
-          teamsPosition.classList.add("driversPosition");
-          teamsName.classList.add("driversName");
-          teamsPoints.classList.add("driversPoints");
-    
-          teamsPhoto.setAttribute("src", "teams_photos/" + teamsPointsArr[i][0] + ".png");
-          teamsPosition.innerText = i + 1 + ".";
-          teamsName.innerText =  teamsPointsArr[i][0];
-          teamsPoints.innerText = teamsPointsArr[i][1];
-      
-          container.appendChild(teamsProfile);
-          teamsProfile.appendChild(teamsPhoto);
-          teamsProfile.appendChild(teamsPosition);
-          teamsProfile.appendChild(teamsName);
-          teamsProfile.appendChild(teamsPoints);
-    
+      teamsPhoto = document.createElement("img"),
+      teamsPosition = document.createElement("span"),
+      teamsName = document.createElement("span"),
+      teamsPoints = document.createElement("span");
+
+    teamsProfile.classList.add("driversProfile");
+    teamsPhoto.classList.add("driversPhotos");
+    teamsPosition.classList.add("driversPosition");
+    teamsName.classList.add("driversName");
+    teamsPoints.classList.add("driversPoints");
+
+    teamsPhoto.setAttribute(
+      "src",
+      "teams_photos/" + teamsPointsArr[i][0] + ".png"
+    );
+    teamsPosition.innerText = i + 1 + ".";
+    teamsName.innerText = teamsPointsArr[i][0];
+    teamsPoints.innerText = teamsPointsArr[i][1];
+
+    container.appendChild(teamsProfile);
+    teamsProfile.appendChild(teamsPhoto);
+    teamsProfile.appendChild(teamsPosition);
+    teamsProfile.appendChild(teamsName);
+    teamsProfile.appendChild(teamsPoints);
   }
 }
 
-export { driversMap, showTeamsStandings, showDriversStandings};
+export { driversMap, showTeamsStandings, showDriversStandings };
